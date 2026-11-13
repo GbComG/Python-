@@ -55,10 +55,21 @@ $   匹配结尾
 import re
 
 #2.正则校验
-result = re.match('.it','ait') #匹配成功
-result1 = re.match('.it','你it') #匹配成功
-result3 = re.match('.it','你好it') #匹配失败
+# result = re.match('.it','ait') #匹配成功
+# result1 = re.match('.it','你it') #匹配成功
+# result3 = re.match('.it','你好it') #匹配失败
 
+# result = re.match('[ahg]it','ait')#匹配成功
+# result1 = re.match('[ahg]it','hit')#匹配成功
+# result3 = re.match('[ahg]it','git')#匹配成功
+# result4 = re.match('[ahg]it','h it')#失败
+
+# result = re.match('[^ahg]]','ait') #失败
+# result = re.search('[^ahg]]it','axit') #分段查找，成功
+
+# result = re.match(r'a\dhm','a1hm') ##成功
+result = re.match(r'a\dhm','a10hm') #失败
+print(result)
 #3.获取匹配结果
 if result:
     print(result.group())
